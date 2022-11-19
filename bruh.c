@@ -39,7 +39,7 @@ int main() {
 
     printf("This is the final matrix1 is:\n");
 
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
             printf("%lf ", MAT1[i][j]);
             }
@@ -49,7 +49,7 @@ int main() {
 
     printf("This is the final matrix2 is:\n");
 
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
             printf("%lf ", MAT2[i][j]);
             }
