@@ -52,11 +52,11 @@ schedparam1.sched_priority = 1;
 schedparam2.sched_priority = 1;
 schedparam3.sched_priority = 1;
 pthread_create(&thread1, NULL, countA, NULL);
-pthread_setschedparam(thread1,SCHED_RR,&schedparam1)
+pthread_setschedparam(thread1,SCHED_RR,&schedparam1);
 pthread_create(&thread2, NULL, countB, NULL);
-pthread_setschedparam(thread2,SCHED_FIFO,&schedparam2)
+pthread_setschedparam(thread2,SCHED_FIFO,&schedparam2);
 pthread_create(&thread3, NULL, countC, NULL);
-pthread_setschedparam(thread3,SCHED_OTHER,&schedparam3)
+pthread_setschedparam(thread3,SCHED_OTHER,&schedparam3);
 pthread_join(thread1,NULL);
 pthread_join(thread2,NULL);
 pthread_join(thread3,NULL);
