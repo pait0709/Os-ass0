@@ -28,15 +28,15 @@ int main(void){
     pid_t process2=fork();
     if(process2==0){
     setpriority(0, PRIO_PROCESS, 25);
-    execl("./bruh.sh","bruh.sh", NULL);
+    execl("./bruh1.sh","bruh1.sh", NULL);
         exit(0);
     }
     clock_gettime(CLOCK_REALTIME,&time3_start);
 
     pid_t process3=fork();
     if(process3==0){
-    setpriority(0, PRIO_PROCESS, 5);
-    execl("./bruh.sh","bruh.sh", NULL);
+    setpriority(0, PRIO_PROCESS, 30);
+    execl("./bruh2.sh","bruh2.sh", NULL);
         exit(0);
     }
 
