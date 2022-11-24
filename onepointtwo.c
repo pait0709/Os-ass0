@@ -11,9 +11,8 @@
 //double xx=pow(10,9);
 void clocktimeret(struct timespec t1,struct timespec t2, char a){
     double totaltime=(((t2.tv_sec*pow(10,9))+t2.tv_nsec)-((t1.tv_nsec+t1.tv_sec*pow(10,9))))/pow(10,9);
-    printf("Total tie taken by process %c:%lf\n",a,totaltime);
+    printf("Total time taken by process %c:%lf\n",a,totaltime);
 }
-
 
 int main(void){
     struct timespec time1_start,time2_start,time3_start,time1_end,time2_end,time3_end;
