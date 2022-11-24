@@ -21,6 +21,7 @@ int main(void){
     if(process1==0){
         setpriority(0, PRIO_PROCESS, 35);
         execl("./bruh.sh","bruh.sh", NULL);
+        exit(0);
     }
     clock_gettime(CLOCK_REALTIME,&time2_start);
     
@@ -28,6 +29,7 @@ int main(void){
     if(process2==0){
     setpriority(0, PRIO_PROCESS, 25);
     execl("./bruh.sh","bruh.sh", NULL);
+        exit(0);
     }
     clock_gettime(CLOCK_REALTIME,&time3_start);
 
@@ -35,6 +37,7 @@ int main(void){
     if(process3==0){
     setpriority(0, PRIO_PROCESS, 5);
     execl("./bruh.sh","bruh.sh", NULL);
+        exit(0);
     }
 
 
