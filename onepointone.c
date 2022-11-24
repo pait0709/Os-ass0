@@ -47,34 +47,17 @@ void *countC(){
 }
 int main(){
 struct sched_param schedparam1,schedparam2,schedparam3;
-pthread_attr_t attr1,attr2,attr3;
 pthread_t thread1,thread2,thread3;
 schedparam1.sched_priority = 1;
 schedparam2.sched_priority = 1;
 schedparam3.sched_priority = 1;
-
-pthread_attr_init(&attr1);
-pthread_attr_setinheritsched(&attr1, PTHREAD_EXPLICIT_SCHED);
-pthread_attr_setschedpolicy(&attr1, SCHED_RR);
-pthread_attr_setschedparam(&attr1, &schedparam1);
-
-pthread_attr_init(&attr2);
-pthread_attr_setinheritsched(&attr2, PTHREAD_EXPLICIT_SCHED);
-pthread_attr_setschedpolicy(&attr2, SCHED_FIFO);
-pthread_attr_setschedparam(&attr2, &schedparam2);
-
-pthread_attr_init(&attr3);
-pthread_attr_setinheritsched(&attr3, PTHREAD_EXPLICIT_SCHED);
-pthread_attr_setschedpolicy(&attr3, SCHED_OTHER);
-pthread_attr_setschedparam(&attr3, &schedparam3);
-
-pthread_create(&thread1, &attr1, countA, NULL);
-pthread_create(&thread2, &attr2, countB, NULL);
-pthread_create(&thread3, &attr3, countC, NULL);
+pthread_create(&thread1, NULL, countA, NULL);
+pthread_setschedparam(thread1,SCHED_RR,&schedparam1)
+pthread_create(&thread2, NULL, countB, NULL);
+pthread_setschedparam(thread2,SCHED_FIFO,&schedparam2)
+pthread_create(&thread3, NULL, countC, NULL);
+pthread_setschedparam(thread3,SCHED_OTHER,&schedparam3)
 pthread_join(thread1,NULL);
-pthread_attr_destroy(&attr1);
 pthread_join(thread2,NULL);
-pthread_attr_destroy(&attr2);
 pthread_join(thread3,NULL);
-pthread_attr_destroy(&attr3);
 }
