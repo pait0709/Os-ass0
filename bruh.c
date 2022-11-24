@@ -7,10 +7,10 @@
 #define SYS_kernel_2D_memcpy 451
 
 int main() {
-    float MAT1[3][3] = {{1.0,2.0,3.0},{3.0,4.0,5.0},{5.0,6.0,7.0}};
+    float MAT1[3][3] = {{1.0,2.0,3.0},{3.0,4.0,5.0},{6.0,7.0,8.0}};
     float MAT2[3][3] = {{1.0,1.0,1.0},{1.0,1.0,1.0},{1.0,1.0,1.0}};
 
-    printf("This is the initial matrix1 is:\n");
+    printf("Destination Matrix:\n");
 
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
@@ -20,7 +20,7 @@ int main() {
     }
     printf("\n");
 
-    printf("This is the initial matrix2 is:\n");
+    printf("Source Matrix:\n");
 
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
@@ -37,7 +37,7 @@ int main() {
         exit(1);
     }
 
-    printf("This is the final matrix1 is:\n");
+    printf("Destination Matrix:\n");
 
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
@@ -47,7 +47,7 @@ int main() {
     }
     printf("\n");
 
-    printf("This is the final matrix2 is:\n");
+    printf("Source Matrix:\n");
 
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
